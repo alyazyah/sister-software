@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Course_Name">
+        <item>Physics 212</item>
+        <item>Calculus 225</item>
+        <item>Circuits 307</item>
+        <item>SoftWare 327</item>
+    </string-array>
+</resources>
