@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AppInterface">
 
-    <Spinner
-        android:id="@+id/spinner_courses"
-        android:layout_width="342dp"
-        android:layout_height="41dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp" />
 
     <TextView
         android:id="@+id/text_view_name"
@@ -21,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="18dp"
@@ -29,5 +22,81 @@
         android:text="Your Courses"
         android:textColor="@android:color/black"
         android:textSize="30sp" />
+    <Spinner
+        android:id="@+id/spinner_courses"
+        android:layout_width="342dp"
+        android:layout_height="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
+    <Button
+        android:id="@+id/Remove"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Add"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="0dp"
+        android:gravity="center_horizontal"
+        android:layout_toEndOf="@+id/Add"
+        android:layout_toRightOf="@+id/Add"
+        android:text="REMOVE COURSE"
+        android:textColor="@android:color/holo_red_light" />
+
+    <Button
+        android:id="@+id/Add"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/text_view_name"
+        android:layout_alignLeft="@+id/text_view_name"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-26dp"
+        android:layout_marginLeft="-26dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="81dp"
+        android:text=" ADD COURSE"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <Button
+        android:id="@+id/whatifcalculator"
+        android:layout_width="365dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/Upcoming"
+        android:layout_alignLeft="@+id/Upcoming"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center_horizontal"
+        android:text="What If?" />
+
+    <Button
+        android:id="@+id/Upcoming"
+        android:layout_width="365dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="13dp"
+        android:gravity="center_horizontal"
+        android:text="Upcoming Deadlines" />
+
+    <Button
+        android:id="@+id/Midtermeval"
+        android:layout_width="365dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/whatifcalculator"
+        android:layout_alignStart="@+id/whatifcalculator"
+        android:layout_alignLeft="@+id/whatifcalculator"
+        android:layout_marginStart="-1dp"
+        android:layout_marginLeft="-1dp"
+        android:layout_marginBottom="-3dp"
+        android:gravity="center_horizontal"
+        android:text="Midterm Weighted Grade" />
 
 </RelativeLayout>
