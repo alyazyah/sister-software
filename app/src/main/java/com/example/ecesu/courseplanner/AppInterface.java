@@ -1,6 +1,7 @@
 package com.example.ecesu.courseplanner;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.text.InputType;
 import android.util.AttributeSet;
@@ -21,12 +22,15 @@ import java.util.ArrayList;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import static java.lang.Thread.sleep;
+
 public class AppInterface extends AppCompatActivity
 {
 
     //declare variables
-    private ArrayList <CourseItem> mCourseList; //making an array that will hold the names of the courses later crater
+    private ArrayList<CourseItem> mCourseList; //making an array that will hold the names of the courses later crater
     public CourseAdapter mAdapter; //declaring a variable from class CourseAdapter
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
