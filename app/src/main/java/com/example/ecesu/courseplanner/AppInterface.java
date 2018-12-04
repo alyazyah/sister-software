@@ -34,12 +34,12 @@ public class AppInterface extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_interface); //taking the id from activity_app_interface.xml
 
-        initList(); //function call to create the array list of course names
+        //initList(); //function call to create the array list of course names
 
         Spinner spinnerCourses = findViewById(R.id.spinner_courses); //making a new spinner (drpo down menu)
 
         mAdapter = new CourseAdapter(this, mCourseList); //getting the course names
-        spinnerCourses.setAdapter(mAdapter); //putting the course names into the spinner
+        //spinnerCourses.setAdapter(mAdapter); //putting the course names into the spinner
 
         spinnerCourses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -59,7 +59,7 @@ public class AppInterface extends AppCompatActivity
         });
 
     }
-    private void initList()
+    /*private void initList()
     {
         //creating the course name array list that holds up demo course names (wil not be used in the back end)
         //in the normal code we will have the user enter whatever and save it into the array list, that wll be backend
@@ -69,5 +69,5 @@ public class AppInterface extends AppCompatActivity
         mCourseList.add(new CourseItem("Circuits 307"));
         mCourseList.add(new CourseItem("SoftWare 327"));
 
-    }
+    }*/
 }
