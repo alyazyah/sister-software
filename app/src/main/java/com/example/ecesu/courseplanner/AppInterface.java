@@ -35,7 +35,6 @@ public class AppInterface extends AppCompatActivity
     private Button upcoming;
     private Button whatif;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

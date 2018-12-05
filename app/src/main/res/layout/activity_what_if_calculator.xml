@@ -1,43 +1,286 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WhatIfCalculator">
 
-    <EditText
-        android:id="@+id/grade"
+    <TextView
+        android:id="@+id/pleaseentergrades"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/whatifcalc"
-        android:layout_alignLeft="@+id/whatifcalc"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="Please enter estimate grades below:"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What If Calculator"
+        android:textColor="@android:color/primary_text_light"
+        android:id="@+id/whatiftitle"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25sp"/>
+
+    <EditText
+        android:id="@+id/grade1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="49dp"
-        android:ems="3"
+        android:layout_marginTop="50dp"
+        android:ems="5"
         android:hint="Grade"
         android:inputType="number" />
 
-    <TextView
-        android:id="@+id/whatifcalc"
-        android:layout_width="300dp"
-        android:layout_height="47dp"
+    <EditText
+        android:id="@+id/grade2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:text="What If Calculator"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="25dp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="80dp"
+        android:ems="5"
+        android:hint="Grade"
+        android:inputType="number" />
 
+    <EditText
+        android:id="@+id/grade3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"
+        android:ems="5"
+        android:hint="Grade"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/grade4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="140dp"
+        android:ems="5"
+        android:hint="Grade"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/grade5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="170dp"
+        android:ems="5"
+        android:hint="Grade"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/grade6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="200dp"
+        android:ems="5"
+        android:hint="Grade"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/grade7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="230dp"
+        android:ems="5"
+        android:hint="Grade"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/grade8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="260dp"
+        android:ems="5"
+        android:hint="Grade"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/grade9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="290dp"
+        android:ems="5"
+        android:hint="Grade"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/grade10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="320dp"
+        android:ems="5"
+        android:hint="Grade"
+        android:inputType="number" />
+
+
+    <EditText
+        android:id="@+id/weight1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:ems="5"
+        android:hint="Percentage"
+        android:inputType="number" />
+
+
+    <EditText
+        android:id="@+id/weight2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:ems="5"
+        android:hint="Percentage"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/weight3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:ems="5"
+        android:hint="Percentage"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/weight4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="140dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:ems="5"
+        android:hint="Percentage"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/weight5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="170dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:ems="5"
+        android:hint="Percentage"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/weight6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:ems="5"
+        android:hint="Percentage"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/weight7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="230dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:ems="5"
+        android:hint="Percentage"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/weight8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="260dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:ems="5"
+        android:hint="Percentage"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/weight9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="290dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:ems="5"
+        android:hint="Percentage"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/weight10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="320dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:ems="5"
+        android:hint="Percentage"
+        android:inputType="number" />
+
+
+    <Button
+        android:id="@+id/WhatIf"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:layout_toEndOf="@+id/pleaseentergrades"
+        android:layout_toRightOf="@+id/pleaseentergrades"
+        android:text="CALCULATE"
+        android:textColor="@android:color/holo_red_light" />
+
+
+    <TextView
+            android:id="@+id/youraverage"
+            android:layout_width="293dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:text="Your average would be: "
+            android:textSize="25sp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/average"
+        android:layout_width="108dp"
+        android:layout_height="45dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp"
+        android:layout_alignStart="@+id/WhatIf"
+        android:layout_alignLeft="@+id/WhatIf"
+        android:layout_alignParentBottom="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
 </RelativeLayout>
