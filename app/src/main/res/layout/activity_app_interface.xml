@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AppInterface">
 
-
     <TextView
         android:id="@+id/text_view_name"
         android:layout_width="291dp"
