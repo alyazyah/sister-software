@@ -25,6 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
         android:id="@+id/AddDeadline"
         style="@style/Widget.AppCompat.Button.Borderless"
@@ -47,15 +48,25 @@
         android:layout_width="87dp"
         android:layout_height="35dp"
         android:layout_below="@+id/AddDeadline"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_marginStart="186dp"
-        android:layout_marginLeft="186dp"
+        android:layout_alignStart="@+id/AddDeadline"
+        android:layout_alignLeft="@+id/AddDeadline"
+        android:layout_marginStart="145dp"
+        android:layout_marginLeft="145dp"
         android:layout_marginTop="-36dp"
         android:text="REMOVE"
         android:textColor="@android:color/holo_red_light"
         tools:layout_editor_absoluteX="212dp"
         tools:layout_editor_absoluteY="38dp" />
+
+    <ListView
+        android:id="@+id/courselist"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_marginTop="100dp">
+
+    </ListView>
+
+
 
 
 </RelativeLayout>
