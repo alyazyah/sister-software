@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".AppInterface" />
-        <activity android:name=".MidSemester"></activity>
+        <activity android:name=".MidSemester" />
+        <activity android:name=".UpcomingDeadlines" />
+        <activity android:name=".WhatIfCalculator"></activity>
     </application>
 
 </manifest>

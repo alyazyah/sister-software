@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.R.drawable;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SimpleCursorAdapter;
@@ -30,6 +31,9 @@ public class AppInterface extends AppCompatActivity
     //declare variables
     private ArrayList<CourseItem> mCourseList; //making an array that will hold the names of the courses later crater
     public CourseAdapter mAdapter; //declaring a variable from class CourseAdapter
+    private Button midterm;
+    private Button upcoming;
+    private Button whatif;
 
 
     @Override
@@ -37,13 +41,48 @@ public class AppInterface extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_interface); //taking the id from activity_app_interface.xml
+;
+        //to get to the Midterm Weighed Grade page
+        midterm = findViewById(R.id.Midtermeval);
+        midterm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //declaring the intent for midterm evaluation
+                Intent midintent = new Intent(AppInterface.this, MidSemester.class);
+                startActivity(midintent);
+            }
+        });
 
-        //initList(); //function call to create the array list of course names
+
+        //the button for what if calculator
+        whatif = findViewById(R.id.whatifcalculator);
+        whatif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //declaring the intent for what if calculator
+                Intent whatifintent = new Intent(AppInterface.this, WhatIfCalculator.class);
+                startActivity(whatifintent);
+            }
+        });
+
+
+        //the button for the upcoming deadlines
+        upcoming = findViewById(R.id.Upcoming);
+        upcoming.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //declaring the intent for upcoming deadlines
+                Intent upcomingintent = new Intent(AppInterface.this, UpcomingDeadlines.class);
+                startActivity(upcomingintent);
+            }
+        });
 
         Spinner spinnerCourses = findViewById(R.id.spinner_courses); //making a new spinner (drpo down menu)
 
         mAdapter = new CourseAdapter(this, mCourseList); //getting the course names
-        //spinnerCourses.setAdapter(mAdapter); //putting the course names into the spinner
 
         spinnerCourses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -63,15 +102,4 @@ public class AppInterface extends AppCompatActivity
         });
 
     }
-    /*private void initList()
-    {
-        //creating the course name array list that holds up demo course names (wil not be used in the back end)
-        //in the normal code we will have the user enter whatever and save it into the array list, that wll be backend
-        mCourseList = new ArrayList<>();
-        mCourseList.add(new CourseItem("Physics 212"));
-        mCourseList.add(new CourseItem("Calculus 225"));
-        mCourseList.add(new CourseItem("Circuits 307"));
-        mCourseList.add(new CourseItem("SoftWare 327"));
-
-    }*/
 }

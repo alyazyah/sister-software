@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpcomingDeadlines">
+
+    <TextView
+        android:id="@+id/upcomingdeadlines"
+        android:layout_width="300dp"
+        android:layout_height="47dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:text="Your Upcoming Deadlines"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="25dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/AddDeadline"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="87dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="231dp"
+        android:layout_marginRight="231dp"
+        android:text="ADD"
+        android:textColor="@android:color/holo_blue_light"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <Button
+        android:id="@+id/RemoveDeadline"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="87dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/AddDeadline"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_marginStart="186dp"
+        android:layout_marginLeft="186dp"
+        android:layout_marginTop="-36dp"
+        android:text="REMOVE"
+        android:textColor="@android:color/holo_red_light"
+        tools:layout_editor_absoluteX="212dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+
+</RelativeLayout>
