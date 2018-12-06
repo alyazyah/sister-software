@@ -277,7 +277,7 @@
         android:layout_width="108dp"
         android:layout_height="45dp"
         android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_alignStart="@+id/WhatIf"
         android:layout_alignLeft="@+id/WhatIf"
         android:layout_alignParentBottom="true"
