@@ -36,6 +36,7 @@ public class WhatIfCalculator extends AppCompatActivity {
     double result; //the result variable for average grades
     double grades[]=new double[10]; //array for grades
     double weights[]=new double[10]; //array for weights
+   // double totalw; // variable to check number of weights
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,9 @@ public class WhatIfCalculator extends AppCompatActivity {
 
         //the text view variable of avarage grades,
         averagegrades = findViewById(R.id.average);
+
+        // calculate total number of weights entered
+       // totalw = weight1 + weight2 + weight3 + weight4 + weight5 + weight6 + weight7 + weight8 + weight9 + weight10;
 
         //basically saying when the CALCULATE button is pressed it is going to do this
         whatif.setOnClickListener(new View.OnClickListener() {
@@ -180,6 +184,12 @@ public class WhatIfCalculator extends AppCompatActivity {
                     weights[9] = parseDouble(weight10.getText().toString());
                 else
                     weights[9]=0.0;
+
+                // if the total weights are greater than a 100, display an error message
+              //  if (totalw > 100)
+                //{
+                    //SNACKBAR
+                //}
 
 
                 //loops for average
