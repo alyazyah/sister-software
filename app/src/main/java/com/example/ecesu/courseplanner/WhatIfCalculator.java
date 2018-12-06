@@ -56,33 +56,47 @@ public class WhatIfCalculator extends AppCompatActivity {
             {
                 //this is just trial. backend stuff doesn't work perfectly
                 //declaring the grade variables
-                g1 = Double.parseDouble(grade1.getText().toString());
-                g2 = Double.valueOf(grade2.getText().toString());
-                g3 = Double.valueOf(grade3.getText().toString());
-                g4 = Double.valueOf(grade4.getText().toString());
-                g5 = Double.valueOf(grade5.getText().toString());
-                g6 = Double.valueOf(grade6.getText().toString());
-                g7 = Double.valueOf(grade7.getText().toString());
-                g8 = Double.valueOf(grade8.getText().toString());
-                g9 = Double.valueOf(grade9.getText().toString());
-                g10 = Double.valueOf(grade10.getText().toString());
+                Double grades[]=new Double[10];
+                grades[0] = Double.parseDouble(grade1.getText().toString());
+                grades[1] = Double.valueOf(grade2.getText().toString());
+                grades[2] = Double.valueOf(grade3.getText().toString());
+                grades[3] = Double.valueOf(grade4.getText().toString());
+                grades[4] = Double.valueOf(grade5.getText().toString());
+                grades[5] = Double.valueOf(grade6.getText().toString());
+                grades[6] = Double.valueOf(grade7.getText().toString());
+                grades[7] = Double.valueOf(grade8.getText().toString());
+                grades[8] = Double.valueOf(grade9.getText().toString());
+                grades[9] = Double.valueOf(grade10.getText().toString());
 
-                //declaring the weigh variables
-                w1 = Double.parseDouble(weight1.getText().toString());
-                w2 = Double.parseDouble(weight1.getText().toString());
-                w3 = Double.parseDouble(weight1.getText().toString());
-                w4 = Double.parseDouble(weight1.getText().toString());
-                w5 = Double.parseDouble(weight1.getText().toString());
-                w6 = Double.parseDouble(weight1.getText().toString());
-                w7 = Double.parseDouble(weight1.getText().toString());
-                w8 = Double.parseDouble(weight1.getText().toString());
-                w9 = Double.parseDouble(weight1.getText().toString());
-                w10 = Double.parseDouble(weight1.getText().toString());
+                //declaring the weight variables
+                Double weights[]=new Double[10];
+                weights[0] = Double.parseDouble(weight1.getText().toString());
+                weights[1] = Double.parseDouble(weight1.getText().toString());
+                weights[2] = Double.parseDouble(weight1.getText().toString());
+                weights[3] = Double.parseDouble(weight1.getText().toString());
+                weights[4] = Double.parseDouble(weight1.getText().toString());
+                weights[5] = Double.parseDouble(weight1.getText().toString());
+                weights[6] = Double.parseDouble(weight1.getText().toString());
+                weights[7] = Double.parseDouble(weight1.getText().toString());
+                weights[8] = Double.parseDouble(weight1.getText().toString());
+                weights[9] = Double.parseDouble(weight1.getText().toString());
 
                 //this only works if there are all 20 variables entered by the user!
                 //i don't know how to do it otherwise
-                result = (((g1*w1)/100)+((g2*w2)/100)+((g3*w3)/100)+((g4*w4))/100+((g5*w5)/100)+((g6*w6)/100)+((g7*w7)/100)+((g8*w8)/100)+((g9*w9)/100)+((g10*w10)/100));
-
+                //im trying these for loops to populates the empty values with zeros but it ain't working
+                for (int i=0;i<10;i++){
+                    if(weights[i]==0){
+                        weights[i]=0.0;
+                    }
+                    if(grades[i]==0){
+                        grades[i]=0.0;
+                    }
+                }
+                //loops for midterm average
+                
+                for (int i=0; i<10;i++){
+                    result+=((grades[i]*weights[i])/100);
+                }
                 //testing if the result is shown when calculate is press
                 //yes the button works!
                 averagegrades.setText(Double.toString(result));
