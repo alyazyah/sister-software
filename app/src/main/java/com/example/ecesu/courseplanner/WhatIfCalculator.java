@@ -1,5 +1,6 @@
 package com.example.ecesu.courseplanner;
 
+import android.content.Context;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static java.lang.Double.*;
 
@@ -39,6 +41,7 @@ public class WhatIfCalculator extends AppCompatActivity {
     double weights[]=new double[10]; //array for weights
     double totalw; // variable to check number of weights
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,20 +70,17 @@ public class WhatIfCalculator extends AppCompatActivity {
         weight10=findViewById(R.id.weight10);
 
 
-       //button CALCULATE that calculates the end result
+
+        //button CALCULATE that calculates the end result
         Button whatif = findViewById(R.id.WhatIf);
 
         //the text view variable of avarage grades,
         averagegrades = findViewById(R.id.average);
 
-        /*// calculate total number of weights entered
-        for (int i = 0; i < 10; i++) {
-            totalw = weights[i];
-        }*/
 
         //snackbar for error message
-       // Snackbar snackbar;
-       // snackbar = Snackbar.make(whatif, "The weights must add up to 100!", Snackbar.LENGTH_LONG);
+        // Snackbar snackbar;
+        // snackbar = Snackbar.make(whatif, "The weights must add up to 100!", Snackbar.LENGTH_LONG);
 
         /*// if the total weights are greater than a 100, display an error message
         if (totalw > 100)
@@ -199,30 +199,36 @@ public class WhatIfCalculator extends AppCompatActivity {
                     weights[9]=0.0;
 
                 // calculate total number of weights entered
-                for (int i = 0; i < 10; i++) {
-                    totalw = weights[i];
-                }
-
-                // if the total weights are greater than a 100, display an error message
-                if (totalw > 100)
+                for (int i = 0; i < 10; i++)
                 {
-                    Button whatif = findViewById(R.id.WhatIf);
-                    Snackbar snackbar;
-                    snackbar = Snackbar.make(whatif, "The weights must add up to 100!", Snackbar.LENGTH_LONG);
-                    snackbar.show();
+                    totalw = totalw + weights[i];
                 }
-                
-                //loops for average
 
+                //loops for average
                 for (int i=0; i<10;i++){
                     result+=((grades[i]*weights[i])/100);
                 }
                 //testing if the result is shown when calculate is press
                 //yes the button works!
                 Double resulttext = parseDouble(String.format("%.2f",result));
-                averagegrades.setText(Double.toString(resulttext));
-                result = 0.0;  
+
+                // if the total weights are greater than a 100, display an error message
+                if (totalw > 100)
+                {
+                    Button whatif = findViewById(R.id.WhatIf);
+                    Snackbar snackbar;
+                    snackbar = Snackbar.make(whatif, "Caution! The weights add up to more than 100!", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                    averagegrades.setText(Double.toString(resulttext));
+                }
+
+                else
+                    averagegrades.setText(Double.toString(resulttext));
+
+                result = 0.0;
+
             }
+
         });
 
     }

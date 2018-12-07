@@ -24,14 +24,21 @@
         android:layout_gravity="center_horizontal"
         android:textSize="25sp"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="In the grades box you enter you grade, and in the Percentage boxes you enter the weight of you grade. If you have 10 Home Works and their percentage is 30%, don't put 30% 10 times, but average out your grades before you input them "
+        android:textSize="11sp"
+        android:layout_marginTop="60dp"/>
+
     <EditText
         android:id="@+id/grade1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
-        android:ems="5"
-        android:hint="Grade"
+        android:layout_marginTop="130dp"
+        android:ems="6"
+        android:hint="Enter Grade"
         android:inputType="numberDecimal" />
 
     <EditText
@@ -39,9 +46,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="80dp"
-        android:ems="5"
-        android:hint="Grade"
+        android:layout_marginTop="160dp"
+        android:ems="6"
+        android:hint="Enter Grade"
         android:inputType="numberDecimal" />
 
     <EditText
@@ -49,9 +56,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="110dp"
-        android:ems="5"
-        android:hint="Grade"
+        android:layout_marginTop="190dp"
+        android:ems="6"
+        android:hint="Enter Grade"
         android:inputType="numberDecimal" />
 
     <EditText
@@ -59,9 +66,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="140dp"
-        android:ems="5"
-        android:hint="Grade"
+        android:layout_marginTop="220dp"
+        android:ems="6"
+        android:hint="Enter Grade"
         android:inputType="numberDecimal" />
 
     <EditText
@@ -69,9 +76,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="170dp"
-        android:ems="5"
-        android:hint="Grade"
+        android:layout_marginTop="250dp"
+        android:ems="6"
+        android:hint="Enter Grade"
         android:inputType="numberDecimal" />
 
     <EditText
@@ -79,9 +86,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="200dp"
-        android:ems="5"
-        android:hint="Grade"
+        android:layout_marginTop="280dp"
+        android:ems="6"
+        android:hint="Enter Grade"
         android:inputType="numberDecimal" />
 
     <EditText
@@ -89,9 +96,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="230dp"
-        android:ems="5"
-        android:hint="Grade"
+        android:layout_marginTop="310dp"
+        android:ems="6"
+        android:hint="Enter Grade"
         android:inputType="numberDecimal" />
 
     <EditText
@@ -99,9 +106,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="260dp"
-        android:ems="5"
-        android:hint="Grade"
+        android:layout_marginTop="340dp"
+        android:ems="6"
+        android:hint="Enter Grade"
         android:inputType="numberDecimal" />
 
     <EditText
@@ -109,9 +116,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="290dp"
-        android:ems="5"
-        android:hint="Grade"
+        android:layout_marginTop="370dp"
+        android:ems="6"
+        android:hint="Enter Grade"
         android:inputType="numberDecimal" />
 
     <EditText
@@ -119,9 +126,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="320dp"
-        android:ems="5"
-        android:hint="Grade"
+        android:layout_marginTop="400dp"
+        android:ems="6"
+        android:hint="Enter Grade"
         android:inputType="numberDecimal" />
 
 
@@ -130,10 +137,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:ems="5"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:ems="6"
         android:hint="Percentage"
         android:inputType="numberDecimal" />
 
@@ -143,10 +150,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="80dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:ems="5"
+        android:layout_marginTop="160dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:ems="6"
         android:hint="Percentage"
         android:inputType="numberDecimal" />
 
@@ -155,10 +162,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="110dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:ems="5"
+        android:layout_marginTop="190dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:ems="6"
         android:hint="Percentage"
         android:inputType="numberDecimal" />
 
@@ -167,22 +174,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="140dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:ems="5"
+        android:layout_marginTop="220dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:ems="6"
         android:hint="Percentage"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"/>
 
     <EditText
         android:id="@+id/weight5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="170dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:ems="5"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:ems="6"
         android:hint="Percentage"
         android:inputType="numberDecimal" />
 
@@ -191,10 +198,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:ems="5"
+        android:layout_marginTop="280dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:ems="6"
         android:hint="Percentage"
         android:inputType="numberDecimal" />
 
@@ -203,10 +210,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="230dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:ems="5"
+        android:layout_marginTop="310dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:ems="6"
         android:hint="Percentage"
         android:inputType="numberDecimal" />
 
@@ -215,22 +222,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="260dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:ems="5"
+        android:layout_marginTop="340dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:ems="6"
         android:hint="Percentage"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"/>
 
     <EditText
         android:id="@+id/weight9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="290dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:ems="5"
+        android:layout_marginTop="370dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:ems="6"
         android:hint="Percentage"
         android:inputType="numberDecimal" />
 
@@ -239,10 +246,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="320dp"
-        android:ems="5"
+        android:layout_marginTop="400dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:ems="6"
         android:hint="Percentage"
         android:inputType="numberDecimal" />
 
