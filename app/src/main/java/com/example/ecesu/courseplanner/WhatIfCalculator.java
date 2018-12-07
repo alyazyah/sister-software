@@ -36,7 +36,7 @@ public class WhatIfCalculator extends AppCompatActivity {
     double result; //the result variable for average grades
     double grades[]=new double[10]; //array for grades
     double weights[]=new double[10]; //array for weights
-   // double totalw; // variable to check number of weights
+    double totalw; // variable to check number of weights
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +73,9 @@ public class WhatIfCalculator extends AppCompatActivity {
         averagegrades = findViewById(R.id.average);
 
         // calculate total number of weights entered
-       // totalw = weight1 + weight2 + weight3 + weight4 + weight5 + weight6 + weight7 + weight8 + weight9 + weight10;
+        for (int i = 0; i < 10; i++) {
+            totalw = weights[i];
+        }
 
         //basically saying when the CALCULATE button is pressed it is going to do this
         whatif.setOnClickListener(new View.OnClickListener() {
