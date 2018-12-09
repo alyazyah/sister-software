@@ -31,7 +31,7 @@ public class AppInterface extends AppCompatActivity
     //declare variables
     private ArrayList<CourseItem> mCourseList; //making an array that will hold the names of the courses later crater
     public CourseAdapter mAdapter; //declaring a variable from class CourseAdapter
-    private Button midterm;
+    private Button course;
     private Button upcoming;
     private Button whatif;
 
@@ -41,15 +41,15 @@ public class AppInterface extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_interface); //taking the id from activity_app_interface.xml
 ;
-        //to get to the Midterm Weighed Grade page
-        midterm = findViewById(R.id.Midtermeval);
-        midterm.setOnClickListener(new View.OnClickListener() {
+        //to get to the courses page
+        course = findViewById(R.id.courses);
+        course.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                //declaring the intent for midterm evaluation
-                Intent midintent = new Intent(AppInterface.this, MidSemester.class);
-                startActivity(midintent);
+                //declaring the intent for courses
+                Intent your_courses = new Intent(AppInterface.this, MidSemester.class);
+                startActivity(your_courses);
             }
         });
 
@@ -79,7 +79,7 @@ public class AppInterface extends AppCompatActivity
             }
         });
 
-        Spinner spinnerCourses = findViewById(R.id.spinner_courses); //making a new spinner (drpo down menu)
+       /* Spinner spinnerCourses = findViewById(R.id.spinner_courses); //making a new spinner (drpo down menu)
 
         mAdapter = new CourseAdapter(this, mCourseList); //getting the course names
 
@@ -98,7 +98,7 @@ public class AppInterface extends AppCompatActivity
             {
                 //does nothing when noting is clicked on
             }
-        });
+        });*/
 
     }
 }
