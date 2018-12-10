@@ -39,6 +39,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="1dp"
         android:layout_toEndOf="@+id/Name"
+        android:onClick="saveInfo"
         android:text="Save" />
 
     <EditText
@@ -76,4 +77,41 @@
         android:hint="Enter course days"
         android:inputType="textPersonName" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:onClick="displayData"
+        android:text="Display Classes" />
+
+    <EditText
+        android:id="@+id/displayText"
+        android:layout_width="345dp"
+        android:layout_height="330dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="105dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/midsemester"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="93dp" />
+
+
 </RelativeLayout>
+
+
