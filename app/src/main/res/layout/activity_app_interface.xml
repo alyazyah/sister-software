@@ -4,45 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AppInterface">
+    tools:context=".AppInterface"
+    android:background="@color/white">
 
     <Button
         android:id="@+id/whatifcalculator"
-        android:layout_width="365dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
         android:layout_alignStart="@+id/Upcoming"
         android:layout_alignLeft="@+id/Upcoming"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="94dp"
         android:gravity="center_horizontal"
         android:text="What If?" />
 
     <Button
         android:id="@+id/Upcoming"
-        android:layout_width="365dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="53dp"
         android:gravity="center_horizontal"
         android:text="Upcoming Deadlines" />
 
     <Button
         android:id="@+id/courses"
-        android:layout_width="365dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
         android:layout_above="@+id/whatifcalculator"
         android:layout_alignStart="@+id/whatifcalculator"
         android:layout_alignLeft="@+id/whatifcalculator"
-        android:layout_marginStart="-1dp"
-        android:layout_marginLeft="-1dp"
-        android:layout_marginBottom="-3dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="3dp"
         android:gravity="center_horizontal"
         android:text="Your Courses" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="517dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="3dp"
+        app:srcCompat="@drawable/logang" />
 
 </RelativeLayout>
