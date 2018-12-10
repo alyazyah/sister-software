@@ -209,6 +209,15 @@ public class WhatIfCalculator extends AppCompatActivity {
                     averagegrades.setText(Double.toString(resulttext));
                 }
 
+                else if(totalw < 100){
+
+                    Button whatif = findViewById(R.id.WhatIf);
+                    Snackbar snackbar;
+                    snackbar = Snackbar.make(whatif, "Caution! The weights add up to less than 100!", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                    averagegrades.setText(Double.toString(resulttext));
+                }
+
                 else
                     averagegrades.setText(Double.toString(resulttext));
 
