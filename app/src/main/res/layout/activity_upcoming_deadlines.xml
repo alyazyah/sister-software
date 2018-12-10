@@ -74,7 +74,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="118dp"
         android:layout_marginLeft="118dp"
-        android:layout_marginBottom="159dp"
+        android:layout_marginBottom="143dp"
         android:src="@drawable/ic_pencil_colored2" />
 
 

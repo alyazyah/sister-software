@@ -48,7 +48,7 @@ public class UpcomingDeadline extends AppCompatActivity {
 
             }
         });
-        
+
         recyclerView = findViewById(R.id.upcomingdeadlines);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
