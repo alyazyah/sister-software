@@ -74,7 +74,7 @@ public class AppInterface extends AppCompatActivity
             public void onClick(View v)
             {
                 //declaring the intent for upcoming deadlines
-                Intent upcomingintent = new Intent(AppInterface.this, UpcomingDeadlines.class);
+                Intent upcomingintent = new Intent(AppInterface.this, UpcomingDeadline.class);
                 startActivity(upcomingintent);
             }
         });
