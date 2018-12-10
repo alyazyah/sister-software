@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class DeadlineAdapter extends RecyclerView.Adapter<DeadlineAdapter.ViewHolder>{
@@ -30,8 +31,8 @@ public class DeadlineAdapter extends RecyclerView.Adapter<DeadlineAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        Deadline deadlineItem= ListDeadlines.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
+        Deadline deadlineItem = ListDeadlines.get(position);
 
         viewHolder.textViewTask.setText(deadlineItem.getTask());
         viewHolder.textViewDate.setText(deadlineItem.getDate());
@@ -53,5 +54,14 @@ public class DeadlineAdapter extends RecyclerView.Adapter<DeadlineAdapter.ViewHo
             textViewTask = itemView.findViewById(R.id.task);
             textViewDate = itemView.findViewById(R.id.date);
         }
+    }
+
+    public void removeItem(int position){
+        ListDeadlines.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public Deadline getDeadlineAt(int position){
+        return ListDeadlines.get(position);
     }
 }
