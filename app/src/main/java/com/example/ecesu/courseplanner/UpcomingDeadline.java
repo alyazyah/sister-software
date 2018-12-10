@@ -19,11 +19,11 @@ public class UpcomingDeadline extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private Button addDeadline;
     private Context context = this;
-
+    UpcomingDeadline upcomingDeadline = (UpcomingDeadline)context;
     private ArrayList<Deadline> deadlineList;
 
-    private EditText utask = (EditText) findViewById(R.id.task);
-    private EditText udate = (EditText) findViewById(R.id.date);
+    EditText utask;
+    EditText udate;
 
 
     @Override
@@ -31,6 +31,8 @@ public class UpcomingDeadline extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upcoming_deadlines);
 
+        utask = (EditText) upcomingDeadline.findViewById(R.id.task);
+        udate = (EditText) upcomingDeadline.findViewById(R.id.date);
         addDeadline = findViewById(R.id.add);
         deadlineList = new ArrayList<>();
         addDeadline.setOnClickListener(new View.OnClickListener() {

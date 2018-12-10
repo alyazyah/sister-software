@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".UpcomingDeadline">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/upcomingdeadlines"
@@ -23,10 +23,10 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/upcomingdeadlines"
         android:layout_alignRight="@+id/upcomingdeadlines"
-        android:layout_marginRight="@+id/upcomingdeadlines"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="-2dp"
-        android:layout_marginBottom="83dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="59dp"
         android:text="Add Deadline" />
 
     <android.support.design.widget.TextInputLayout

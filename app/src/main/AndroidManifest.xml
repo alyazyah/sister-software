@@ -20,6 +20,7 @@
         <activity android:name=".AppInterface" />
         <activity android:name=".MidSemester" />
         <activity android:name=".WhatIfCalculator" />
+        <activity android:name=".UpcomingDeadline"/>
         <activity android:name=".PopActivity"
             android:theme="@style/AppTheme.PopMe"></activity>
     </application>

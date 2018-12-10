@@ -69,24 +69,11 @@ public class WhatIfCalculator extends AppCompatActivity {
         weight9=findViewById(R.id.weight9);
         weight10=findViewById(R.id.weight10);
 
-
-
         //button CALCULATE that calculates the end result
         Button whatif = findViewById(R.id.WhatIf);
 
         //the text view variable of avarage grades,
         averagegrades = findViewById(R.id.average);
-
-
-        //snackbar for error message
-        // Snackbar snackbar;
-        // snackbar = Snackbar.make(whatif, "The weights must add up to 100!", Snackbar.LENGTH_LONG);
-
-        /*// if the total weights are greater than a 100, display an error message
-        if (totalw > 100)
-        {
-            snackbar.show();
-        }*/
 
         //basically saying when the CALCULATE button is pressed it is going to do this
         whatif.setOnClickListener(new View.OnClickListener() {
