@@ -58,6 +58,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
-        app:srcCompat="@drawable/logang" />
+        app:srcCompat="@drawable/studybuddypencilv2" />
 
 </RelativeLayout>

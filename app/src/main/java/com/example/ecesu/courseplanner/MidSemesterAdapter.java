@@ -1,4 +1,4 @@
-package com.example.ecesu.courseplanner;
+/*package com.example.ecesu.courseplanner;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -36,4 +36,4 @@ public class MidSemsterAdapter extends RecyclerView.Adapter<MidSemsterAdapter.Vi
     public int getItemCount() {
         return 0;
     }
-}
+}*/

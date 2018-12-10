@@ -62,7 +62,7 @@ public class MidSemester extends AppCompatActivity {
         tv.setMovementMethod(new ScrollingMovementMethod());
         displayText = (TextView) findViewById((R.id.displayText));}
 
-        /*  Im just gonna block this out to make sure that the Recycler View works. You can implement this later <3
+        /*  Im just gonna block this out to make sure that the Recycler View works. You can implement this later <3*/
         public void saveInfo (View view){
             //save info of classes
 
@@ -87,9 +87,9 @@ public class MidSemester extends AppCompatActivity {
 
             displayText.setText("Class: " + nameOfClass + "\n" + "Time: " + timeOfClass + "\n" + "Days: " + daysOfClass);
         }
-        */
 
-    recyclerView = findViewById(R.id.midsemester);
+
+   /* recyclerView = findViewById(R.id.midsemester);
     recyclerView.setHasFixedSize(true);
     layoutManager = new LinearLayoutManager(this);
     adapter = new DeadlineAdapter(deadlineList, this);
@@ -113,8 +113,7 @@ public class MidSemester extends AppCompatActivity {
     });
 
         helper.attachToRecyclerView(recyclerView);
-
+*/
 }
 
-}
 
