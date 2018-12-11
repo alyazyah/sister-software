@@ -26,12 +26,13 @@ import android.widget.TextView;
 public class MidSemester extends AppCompatActivity {
     private ArrayList<String> courseList;
     //private ArrayAdapter<String> adapter;  // who is she chas?
+    public ArrayList<String> selection = new ArrayList<String>();
     private EditText txtInput;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adap;
     private RecyclerView.LayoutManager layoutManager;
     private Context context = this;
-    MidSemester midSemester = (MidSemester)context;
+    MidSemester midSemester = (MidSemester) context;
     Button save;
     EditText txtname, txttime, txtday;
     TextView tv, displayText;
@@ -56,37 +57,103 @@ public class MidSemester extends AppCompatActivity {
 
         txtname = (EditText) findViewById(R.id.Name);
         txttime = (EditText) findViewById(R.id.Time);
-        txtday = (EditText) findViewById(R.id.Day);
+       // txtday = (EditText) findViewById(R.id.Day);
         save = (Button) findViewById(R.id.Save);
         tv = (TextView) findViewById(R.id.display);
         tv.setMovementMethod(new ScrollingMovementMethod());
-        displayText = (TextView) findViewById((R.id.displayText));}
+        displayText = (TextView) findViewById((R.id.displayText));
+    }
 
-        /*  Im just gonna block this out to make sure that the Recycler View works. You can implement this later <3*/
-        public void saveInfo (View view){
-            //save info of classes
+    /*  Im just gonna block this out to make sure that the Recycler View works. You can implement this later <3*/
+    public void saveInfo(View view) {
+        //save info of classes
 
-            SharedPreferences classInput = getSharedPreferences("userClass", Context.MODE_PRIVATE);
+        SharedPreferences classInput = getSharedPreferences("userClass", Context.MODE_PRIVATE);
 
-            SharedPreferences.Editor editObj = classInput.edit();
-            editObj.putString("courseName", txtname.getText().toString());
-            editObj.putString("courseTime", txttime.getText().toString());
-            editObj.putString("courseDays", txtday.getText().toString());
-            editObj.apply();
+        SharedPreferences.Editor editObj = classInput.edit();
+        editObj.putString("courseName", txtname.getText().toString());
+        editObj.putString("courseTime", txttime.getText().toString());
+       // editObj.putString("courseDays", txtday.getText().toString());
+        editObj.apply();
+        Toast.makeText(this, "Class Saved!", Toast.LENGTH_LONG).show();
+    }
 
-            Toast.makeText(this, "Class Saved!", Toast.LENGTH_LONG).show();
+    public void selectItem(View view)
+    {
+        boolean checked = ((CheckBox) view).isChecked();
+        switch (view.getId())
+        {
+            case R.id.m:
+                if (checked) {
+                    selection.add("Monday");
+                }
+                else
+                {
+                    selection.remove("Monday");
+                }
+                break;
+
+            case R.id.t:
+                if (checked) {
+                    selection.add("Tuesday");
+                }
+                else
+                {
+                    selection.remove("Tuesday");
+                }
+                break;
+
+            case R.id.w:
+                if (checked) {
+                    selection.add("Wednesday");
+                }
+                else
+                {
+                    selection.remove("Wednesday");
+                }
+                break;
+
+            case R.id.r:
+                if (checked) {
+                    selection.add("Thursday");
+                }
+                else
+                {
+                    selection.remove("Thursday");
+                }
+                break;
+
+            case R.id.f:
+                if (checked) {
+                    selection.add("Friday");
+                }
+                else
+                {
+                    selection.remove("Friday");
+                }
+                break;
+
         }
 
-        public void displayData (View view){
-            //print out saved classes
-            SharedPreferences classInput = getSharedPreferences("userClass", Context.MODE_PRIVATE);
+    }
 
-            String nameOfClass = classInput.getString("courseName", " ");
-            String timeOfClass = classInput.getString("courseTime", " ");
-            String daysOfClass = classInput.getString("courseDays", " ");
-
-            displayText.setText("Class: " + nameOfClass + "\n" + "Time: " + timeOfClass + "\n" + "Days: " + daysOfClass);
+    public void displayData(View view) {
+        //print out saved classes
+        String final_class_selection = "";
+        for (String Selections : selection)
+        {
+            final_class_selection = final_class_selection + Selections + " ";
         }
+
+        SharedPreferences classInput = getSharedPreferences("userClass", Context.MODE_PRIVATE);
+
+        String nameOfClass = classInput.getString("courseName", " ");
+        String timeOfClass = classInput.getString("courseTime", " ");
+     //   String daysOfClass = classInput.getString("courseDays", " ");
+
+        displayText.setText("Class: " + nameOfClass + "\n" + "Time: " + timeOfClass + "\n" + "Days: " + final_class_selection);
+        displayText.setEnabled(true);
+    }
 
 
    /* recyclerView = findViewById(R.id.midsemester);
