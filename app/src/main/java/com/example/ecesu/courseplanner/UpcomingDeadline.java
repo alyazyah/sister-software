@@ -20,6 +20,8 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+import static java.sql.Types.NULL;
+
 public class UpcomingDeadline extends AppCompatActivity {
 
     private RecyclerView recyclerView;
@@ -33,6 +35,8 @@ public class UpcomingDeadline extends AppCompatActivity {
 
     EditText utask;
     EditText udate;
+
+    int counter;
 
 
     @Override
@@ -91,7 +95,24 @@ public class UpcomingDeadline extends AppCompatActivity {
         String task = utask.getText().toString();
         String date = udate.getText().toString();
         Deadline userinput = new Deadline(task, date);
-        deadlineList.add(userinput);
+
+        Deadline deadlineEntered = new Deadline(task, date);
+
+        //error check the input. Is it empty? Is the date valid?
+
+        if (deadlineEntered == null || task.trim().equals("") || date.trim().equals(""))
+        {
+            Toast.makeText(getBaseContext(), "Input field is empty!", Toast.LENGTH_LONG).show();
+        }
+        else if(date.length()>10) {
+            Toast.makeText(getBaseContext(), "Date is invalid!", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            deadlineList.add(deadlineEntered);
+        }
+
+
     }
 
     public void savetasks(){
