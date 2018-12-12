@@ -97,7 +97,15 @@ public class MidSemester extends AppCompatActivity {
         ArrayList <String> days = checkboxes;
 
         Courses classEntered = new Courses(course, time, days);
-        courseList.add(classEntered);
+
+        if (classEntered == null || course.trim().equals("") || time.trim().equals(""))
+        {
+            Toast.makeText(getBaseContext(), "Input field is empty!", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            courseList.add(classEntered);
+        }
     }
 
     public void saveData(){
