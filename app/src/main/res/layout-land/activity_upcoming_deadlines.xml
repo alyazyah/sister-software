@@ -40,14 +40,14 @@
         android:text="Add Deadline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.979"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/upcomingdeadlines"
-        app:layout_constraintVertical_bias="0.97" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout"
-        android:layout_width="0dp"
+        android:layout_width="442dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
@@ -100,8 +100,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="63dp"
-        android:layout_height="63dp"
+        android:layout_width="50dp"
+        android:layout_height="51dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
@@ -113,10 +113,25 @@
         android:src="@drawable/ic_pencil_colored2"
         app:layout_constraintBottom_toTopOf="@+id/add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.982"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/upcomingdeadlines"
-        app:layout_constraintVertical_bias="0.136" />
+        app:layout_constraintVertical_bias="0.8" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Save"
+        app:layout_constraintBottom_toTopOf="@+id/add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/upcomingdeadlines"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </android.support.constraint.ConstraintLayout>

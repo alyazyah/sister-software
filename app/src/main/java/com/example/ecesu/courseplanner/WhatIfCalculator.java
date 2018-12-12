@@ -188,7 +188,7 @@ public class WhatIfCalculator extends AppCompatActivity {
                 // calculate total number of weights entered
                 for (int i = 0; i < 10; i++)
                 {
-                    totalw = totalw + weights[i];
+                    totalw += weights[i];
                 }
 
                 //loops for average

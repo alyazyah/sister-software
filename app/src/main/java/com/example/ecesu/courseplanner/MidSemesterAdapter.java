@@ -29,17 +29,28 @@ public class MidSemesterAdapter extends RecyclerView.Adapter<MidSemesterAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
+        Courses currentCourse = courseList.get(i);
+        viewHolder.textViewCourse.setText(currentCourse.getCourse());
+        viewHolder.textViewTime.setText(currentCourse.getTime());
+        viewHolder.textViewDays.setText(currentCourse.getDate().toString());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return courseList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView textViewCourse;
+        public TextView textViewTime;
+        public TextView textViewDays;
         public ViewHolder(View itemView) {
             super(itemView);
+
+            textViewCourse = itemView.findViewById(R.id.course);
+            textViewTime = itemView.findViewById(R.id.time);
+            textViewDays = itemView.findViewById(R.id.days);
         }
     }
+
 }

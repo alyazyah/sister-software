@@ -1,6 +1,7 @@
 package com.example.ecesu.courseplanner;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +11,13 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class UpcomingDeadline extends AppCompatActivity {
@@ -20,6 +26,7 @@ public class UpcomingDeadline extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private Button addDeadline;
+    private Button saveDeadline;
     private Context context = this;
     UpcomingDeadline upcomingDeadline = (UpcomingDeadline)context;
     private ArrayList<Deadline> deadlineList;
@@ -36,16 +43,20 @@ public class UpcomingDeadline extends AppCompatActivity {
         utask = (EditText) upcomingDeadline.findViewById(R.id.task);
         udate = (EditText) upcomingDeadline.findViewById(R.id.date);
         addDeadline = findViewById(R.id.add);
-        deadlineList = new ArrayList<>();
+        saveDeadline = findViewById(R.id.save);
+
+        loadtasks();
+
         addDeadline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-
-                String task = utask.getText().toString();
-                String date = udate.getText().toString();
-                Deadline userinput = new Deadline(task, date);
-                deadlineList.add(userinput);
-
+                addtask();
+                            }
+        });
+        saveDeadline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                savetasks();
             }
         });
 
@@ -73,7 +84,39 @@ public class UpcomingDeadline extends AppCompatActivity {
         });
 
         helper.attachToRecyclerView(recyclerView);
-        
+
+    }
+
+    public void addtask(){
+        String task = utask.getText().toString();
+        String date = udate.getText().toString();
+        Deadline userinput = new Deadline(task, date);
+        deadlineList.add(userinput);
+    }
+
+    public void savetasks(){
+        SharedPreferences tasksPreferences = getSharedPreferences("tasks pref",MODE_PRIVATE);
+        SharedPreferences.Editor editor = tasksPreferences.edit();
+        Gson gson = new Gson();
+
+        String json = gson.toJson(deadlineList);
+        editor.putString("task list", json);
+        editor.apply();
+
+        Toast.makeText(context, "Deadlines saved!", Toast.LENGTH_SHORT).show();
+    }
+
+    public void loadtasks(){
+        SharedPreferences tasksPreferences = getSharedPreferences("tasks pref", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = tasksPreferences.getString("task list", null);
+        Type type = new TypeToken<ArrayList<Deadline>>() {}.getType();
+        deadlineList = gson.fromJson(json, type);
+
+        if (deadlineList == null){
+            deadlineList = new ArrayList<>();
+        }
     }
 
 }
+
