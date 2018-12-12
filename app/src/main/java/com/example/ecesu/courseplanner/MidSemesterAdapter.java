@@ -1,4 +1,4 @@
-/*package com.example.ecesu.courseplanner;
+package com.example.ecesu.courseplanner;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,24 +11,24 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MidSemsterAdapter extends RecyclerView.Adapter<MidSemsterAdapter.ViewHolder>{
-    private ArrayList<String> courseList;
+public class MidSemesterAdapter extends RecyclerView.Adapter<MidSemesterAdapter.ViewHolder>{
+    private ArrayList<Courses> courseList;
     private Context context;
 
-    public MidSemsterAdapter(ArrayList<String> courseList, Context context){
+    public MidSemesterAdapter(ArrayList<Courses> courseList, Context context){
         this.courseList = courseList;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public MidSemsterAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_course,viewGroup,false);
         return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MidSemsterAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
     }
 
@@ -36,4 +36,10 @@ public class MidSemsterAdapter extends RecyclerView.Adapter<MidSemsterAdapter.Vi
     public int getItemCount() {
         return 0;
     }
-}*/
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        public ViewHolder(View itemView) {
+            super(itemView);
+        }
+    }
+}
