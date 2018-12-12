@@ -8,8 +8,9 @@ import android.view.View;
 import android.widget.Button;
 
 public class WelcomeScreen extends AppCompatActivity {
-
+    //class for welcome page
     private static int SPLASH_TIME_OUT=2000;
+    //waits for 2 seconds before switching activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class WelcomeScreen extends AppCompatActivity {
                 Intent appIntent = new Intent(WelcomeScreen.this, AppInterface.class);
                 startActivity(appIntent);
                 finish();
+                //shows activity for 2 seconds
             }
         }, SPLASH_TIME_OUT);
     }

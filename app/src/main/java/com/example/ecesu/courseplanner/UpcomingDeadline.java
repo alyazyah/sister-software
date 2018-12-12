@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import static java.sql.Types.NULL;
 
 public class UpcomingDeadline extends AppCompatActivity {
-
+    //Variable declarations
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -36,50 +36,51 @@ public class UpcomingDeadline extends AppCompatActivity {
     EditText utask;
     EditText udate;
 
-    int counter;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upcoming_deadlines);
 
+        //links variable and objects on layout
         utask = (EditText) upcomingDeadline.findViewById(R.id.task);
         udate = (EditText) upcomingDeadline.findViewById(R.id.date);
         addDeadline = findViewById(R.id.add);
         saveDeadline = findViewById(R.id.save);
 
-        loadtasks();
+        loadtasks(); //calls load function to load saved data
 
         addDeadline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 addtask();
                             }
-        });
+        }); //when the addDeadline button is pressed the addtask() function is called
         saveDeadline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 savetasks();
             }
-        });
+        }); //when the saveDeadline button is pressed the savetasks() functions is called
 
-        recyclerView = findViewById(R.id.upcomingdeadlines);
-        recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-        adapter = new DeadlineAdapter(deadlineList, this);
+        recyclerView = findViewById(R.id.upcomingdeadlines); //creates a variable for the recyclerview object on the app layout
+        recyclerView.setHasFixedSize(true); //sets a fixed sized for the recycler view
+        layoutManager = new LinearLayoutManager(this); //formatting for items within recyclerview
+        adapter = new DeadlineAdapter(deadlineList, this); //creates the adapter for the current layout and recyclerview
 
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager); //assigns the layoutmanager to the recyclerview
+        recyclerView.setAdapter(adapter); //assigns the adapter to the recyclerview
 
         ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT) {
+            //function to interpret different gestures done on the recycler view
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder viewHolder1) {
                 return false;
+                //allows the user to move the items in a recycler view
             }
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder target, int i) {
+                //function allows users to swipe away items in order to delete them
                 int position = target.getAdapterPosition();
 
                 deadlineList.remove(position);
@@ -87,14 +88,15 @@ public class UpcomingDeadline extends AppCompatActivity {
             }
         });
 
-        helper.attachToRecyclerView(recyclerView);
+        helper.attachToRecyclerView(recyclerView); //attaches the gesture object to the recyclerview
 
     }
 
     public void addtask(){
+        //function creates a new task and puts it on the recyclerview
+        //variable declarations
         String task = utask.getText().toString();
         String date = udate.getText().toString();
-        Deadline userinput = new Deadline(task, date);
 
         Deadline deadlineEntered = new Deadline(task, date);
 
@@ -116,26 +118,30 @@ public class UpcomingDeadline extends AppCompatActivity {
     }
 
     public void savetasks(){
-        SharedPreferences tasksPreferences = getSharedPreferences("tasks pref",MODE_PRIVATE);
-        SharedPreferences.Editor editor = tasksPreferences.edit();
-        Gson gson = new Gson();
+        //function saves the deadline array to a sharedpreferences folder
 
-        String json = gson.toJson(deadlineList);
-        editor.putString("task list", json);
-        editor.apply();
+        SharedPreferences tasksPreferences = getSharedPreferences("tasks pref",MODE_PRIVATE); //opens sharedpreferences folder
+        SharedPreferences.Editor editor = tasksPreferences.edit(); //opens the editor for the shared preferences
+        Gson gson = new Gson(); //create gson object
 
-        Toast.makeText(context, "Deadlines saved!", Toast.LENGTH_SHORT).show();
+        String json = gson.toJson(deadlineList); //serializes the data
+        editor.putString("task list", json); //assigns the string key for the data
+        editor.apply(); //stores it in folder
+
+        Toast.makeText(context, "Deadlines saved!", Toast.LENGTH_SHORT).show(); //message to indicate that the data has been saved
     }
 
     public void loadtasks(){
-        SharedPreferences tasksPreferences = getSharedPreferences("tasks pref", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = tasksPreferences.getString("task list", null);
-        Type type = new TypeToken<ArrayList<Deadline>>() {}.getType();
-        deadlineList = gson.fromJson(json, type);
+        // function loads previously saved data
+
+        SharedPreferences tasksPreferences = getSharedPreferences("tasks pref", MODE_PRIVATE); //opens sharedpreferences folder
+        Gson gson = new Gson(); //creates gson object
+        String json = tasksPreferences.getString("task list", null); //returns serialized object
+        Type type = new TypeToken<ArrayList<Deadline>>() {}.getType(); //creates deadline array
+        deadlineList = gson.fromJson(json, type); //deserializes the object into the new array
 
         if (deadlineList == null){
-            deadlineList = new ArrayList<>();
+            deadlineList = new ArrayList<>(); //if there is no saved data, a new array is created
         }
     }
 

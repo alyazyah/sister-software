@@ -1,29 +1,10 @@
 package com.example.ecesu.courseplanner;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.text.InputType;
-import android.util.AttributeSet;
 import android.view.View;
-import android.R.drawable;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.SimpleCursorAdapter;
-import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
-
-import android.widget.AdapterView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import static java.lang.Thread.sleep;
 
 public class AppInterface extends AppCompatActivity
 {
@@ -78,27 +59,6 @@ public class AppInterface extends AppCompatActivity
                 startActivity(upcomingintent);
             }
         });
-
-       /* Spinner spinnerCourses = findViewById(R.id.spinner_courses); //making a new spinner (drpo down menu)
-
-        mAdapter = new CourseAdapter(this, mCourseList); //getting the course names
-
-        spinnerCourses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-            {
-                CourseItem clickedItem = (CourseItem) parent.getItemAtPosition(position); //it choses the selected course
-                String clickedCourseName= clickedItem.getCourseName(); //getting the clicked course name and showing it on the drop down menu
-                Toast.makeText(AppInterface.this, clickedCourseName + " selected", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent)
-            {
-                //does nothing when noting is clicked on
-            }
-        });*/
 
     }
 }

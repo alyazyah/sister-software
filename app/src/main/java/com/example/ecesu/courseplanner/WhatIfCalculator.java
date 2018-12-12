@@ -1,6 +1,5 @@
 package com.example.ecesu.courseplanner;
 
-import android.content.Context;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,12 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import static java.lang.Double.*;
 
 public class WhatIfCalculator extends AppCompatActivity {
 
+    //creates the objects for the grades
     private EditText grade1;
     private EditText grade2;
     private EditText grade3;
@@ -24,7 +22,9 @@ public class WhatIfCalculator extends AppCompatActivity {
     private EditText grade7;
     private EditText grade8;
     private EditText grade9;
-    private EditText grade10; //all of the grade IDs
+    private EditText grade10;
+
+    //creates the objects for the weights
     private EditText weight1;
     private EditText weight2;
     private EditText weight3;
@@ -35,6 +35,7 @@ public class WhatIfCalculator extends AppCompatActivity {
     private EditText weight8;
     private EditText weight9;
     private EditText weight10;
+
     private TextView averagegrades; //text view, the number that will be displayed at the end
     double result; //the result variable for average grades
     double grades[]=new double[10]; //array for grades
@@ -47,6 +48,7 @@ public class WhatIfCalculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_what_if_calculator);
 
+        //equals the grade variable to the respective grade field on the activity layout
         grade1= findViewById(R.id.grade1);
         grade2= findViewById(R.id.grade2);
         grade3= findViewById(R.id.grade3);
@@ -58,6 +60,7 @@ public class WhatIfCalculator extends AppCompatActivity {
         grade9= findViewById(R.id.grade9);
         grade10= findViewById(R.id.grade10);
 
+        //equals the weight variable to the respective weight field on the activity layout
         weight1=findViewById(R.id.weight1);
         weight2=findViewById(R.id.weight2);
         weight3=findViewById(R.id.weight3);
@@ -80,9 +83,8 @@ public class WhatIfCalculator extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                //this is just trial. backend stuff doesn't work perfectly
-                //if-else loops get text from edit fields and set them to 0.0 if there is no value in the field
-
+                //error checks to see if the values of grades is empty and if it is, it is set equal 0.0. Otherwise, the variable
+                //holds the value entered by the user
                 if (!TextUtils.isEmpty(grade1.getText()))
                     grades[0] = parseDouble(grade1.getText().toString());
                 else
@@ -133,6 +135,8 @@ public class WhatIfCalculator extends AppCompatActivity {
                 else
                     grades[9]=0.0;
 
+                //error checks to see if the values of weights is empty and if it is, it is set equal 0.0. Otherwise, the variable
+                //holds the value entered by the user
                 //declaring the weight variables
                 if (!TextUtils.isEmpty(weight1.getText()))
                     weights[0] = parseDouble(weight1.getText().toString());
@@ -188,7 +192,7 @@ public class WhatIfCalculator extends AppCompatActivity {
                 // calculate total number of weights entered
                 for (int i = 0; i < 10; i++)
                 {
-                    totalw += weights[i];
+                    totalw += weights[i]; //loops to count the sum of the maximum scores on the tests
                 }
 
                 //loops for average
@@ -204,26 +208,26 @@ public class WhatIfCalculator extends AppCompatActivity {
                 {
                     Button whatif = findViewById(R.id.WhatIf);
                     Snackbar snackbar;
-                    snackbar = Snackbar.make(whatif, "Caution! The weights add up to more than 100!", Snackbar.LENGTH_LONG);
+                    snackbar = Snackbar.make(whatif, "Caution! The weights add up to more than 100!", Snackbar.LENGTH_LONG); //error message
                     snackbar.show();
-                    averagegrades.setText(Double.toString(resulttext));
+                    averagegrades.setText(Double.toString(resulttext)); //calculates grade average
                 }
 
                 else if(totalw < 100){
-
+                    //checks if the total amount of sum of the weights is less than 100
                     Button whatif = findViewById(R.id.WhatIf);
                     Snackbar snackbar;
-                    snackbar = Snackbar.make(whatif, "Caution! The weights add up to less than 100!", Snackbar.LENGTH_LONG);
+                    snackbar = Snackbar.make(whatif, "Caution! The weights add up to less than 100!", Snackbar.LENGTH_LONG); //error messages
                     snackbar.show();
                     averagegrades.setText(Double.toString(resulttext));
                 }
 
-                else
+                else //if neither previous condition is met
                     averagegrades.setText(Double.toString(resulttext));
-                    totalw = 0;
+                    totalw = 0; //resets totalweigth to 0
 
-                result = 0.0;
-                totalw= 0;
+                result = 0.0; //resets result variable to 0
+                totalw= 0;//resets total weight variable to 0;
 
             }
 
