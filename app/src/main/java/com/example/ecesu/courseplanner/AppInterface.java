@@ -29,8 +29,8 @@ public class AppInterface extends AppCompatActivity
 {
 
     //declare variables
-    private ArrayList<CourseItem> mCourseList; //making an array that will hold the names of the courses later crater
-    public CourseAdapter mAdapter; //declaring a variable from class CourseAdapter
+    //private ArrayList<CourseItem> mCourseList; //making an array that will hold the names of the courses later crater
+    //public CourseAdapter mAdapter; //declaring a variable from class CourseAdapter
     private Button course;
     private Button upcoming;
     private Button whatif;
