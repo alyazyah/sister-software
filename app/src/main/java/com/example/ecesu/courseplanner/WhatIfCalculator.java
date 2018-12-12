@@ -220,8 +220,10 @@ public class WhatIfCalculator extends AppCompatActivity {
 
                 else
                     averagegrades.setText(Double.toString(resulttext));
+                    totalw = 0;
 
                 result = 0.0;
+                totalw= 0;
 
             }
 
